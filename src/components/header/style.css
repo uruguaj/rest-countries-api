@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap");
+.header {
+  max-height: 3.75rem;
+  min-height: 3.75rem;
+  background-color: white;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.header-title {
+  cursor: pointer;
+}
+.nav {
+  margin-top: 1rem;
+  padding: 1.25rem;
+  font-size: 1.15rem;
+  font-family: "Oxygen", sans-serif;
+}
+.toggle-button {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  margin-right: 1rem;
+  font-family: "Oxygen", sans-serif;
+}
+
+@media screen and (max-width: 375px) {
+  .nav {
+    font-size: 0.85rem;
+  }
+  .toggle-button {
+    font-size: 0.85rem;
+  }
+}
+@media screen and (min-width: 500px) {
+  .toggle-button {
+    margin-right: 2rem;
+  }
+}

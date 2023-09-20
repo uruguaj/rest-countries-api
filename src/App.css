@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@200&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+}
+.body {
+  margin-top: 1.25rem;
+  background-color: hsl(0, 0%, 98%);
+  max-width: 100%;
+  padding: 1.25rem;
+}
+.input-search {
+  padding-left: 1.15rem;
+  color: hsl(0, 0%, 52%);
+  height: 3.75rem;
+  font-size: 1rem;
+}
+.filter {
+  width: 50vw;
+  height: 3.75rem;
+}
+.ant-select-selection-item {
+  font-size: 1rem;
+}
+.button-search {
+  height: 3.75rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 10rem;
+  margin-left: 20%;
+}
+.card {
+  background-color: white;
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+  max-width: 100%;
+}
+.info-div {
+  padding: 1rem;
+}
+.info-span {
+  font-family: "Josefin Sans", sans-serif;
+}
+.countries {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.flag {
+  object-fit: cover;
+  max-width: 100%;
+  border-radius: 0.2rem;
+}
+.country-title {
+  color: #1a1a1a;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.25rem;
+}
+a {
+  text-decoration: none;
+}
+span {
+  font-family: "Catamaran", sans-serif;
+}
+@media screen and (min-width: 520px) {
+  .body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .countries {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    max-width: 100%;
+  }
+  .card {
+    max-width: 12.5rem;
+    min-width: 12.5rem;
+    margin-right: 1rem;
+  }
+  .body{
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 620px) {
+  .card{
+    max-width:15.5rem;
+    min-width: 15.5rem;
+  }
+
+}
+@media screen and (min-width: 800px) {
+  .filter{
+    max-width: 10vw;
+    margin-left: 1rem;
+  }
+  .input-search{
+    min-width: 50vw;
+  }
+  .card{
+    max-width:19.9rem;
+    min-width: 19.9rem;
+  }
+  .flag{
+    width: 100%;
+    height: 50%;
+  }
+
+  .body{
+    flex-direction: row;
+  }
+  .countries{
+    flex-basis: 100%;
+
+  }
+
+}
