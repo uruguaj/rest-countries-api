@@ -18,17 +18,13 @@
 }
 
 @media screen and (min-width: 500px) {
-.flag-big{
-  margin-top: 6.25rem;
-
-}
-  .content{
+  .flag-big {
+    margin-top: 6.25rem;
+  }
+  .content {
     display: flex;
   }
-  .single-country{
+  .single-country {
     height: 100vh;
   }
-
-
-  
 }

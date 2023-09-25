@@ -4,55 +4,55 @@ import { useEffect, useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { Select } from "antd";
 import axios from "axios";
-import { message } from 'antd';
+import { message } from "antd";
 
-import {useNavigate, useSearchParams} from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 function App() {
   const [form] = Form.useForm();
   const [data, setData] = useState([]);
-  const [filter , setFilter] = useSearchParams({search:"", region: ""})
-  const search = filter.get("search")
-  const region = filter.get("region")
+  const [filter, setFilter] = useSearchParams({ search: "", region: "" });
+  const search = filter.get("search");
+  const region = filter.get("region");
   const [messageApi, contextHolder] = message.useMessage();
   const error = () => {
     messageApi.open({
-      type: 'error',
-      content: 'Seems this country is not here :/',
+      type: "error",
+      content: "Seems this country is not here :/",
     });
   };
 
   useEffect(() => {
     axios
-        .get("./data.json")
-        .then((res) => {
-          let filteredData = res.data;
+      .get("./data.json")
+      .then((res) => {
+        let filteredData = res.data;
 
-          if (search) {
-            filteredData = filteredData.filter((country) =>
-                country.name.toLowerCase().includes(search.toLowerCase())
-            );
-            if(filteredData == ""){
-                error()
-                setFilter("")
-            }
+        if (search) {
+          filteredData = filteredData.filter((country) =>
+            country.name.toLowerCase().includes(search.toLowerCase()),
+          );
+          if (filteredData == "") {
+            error();
+            setFilter("");
           }
+        }
 
-          if (region && region !== "none") {
-            filteredData = filteredData.filter(
-                (country) => country.region.toLowerCase() === region.toLowerCase()
-            );
-            if(filteredData == ""){
-              error()
-              setFilter("")
-            }
+        if (region && region !== "none") {
+          filteredData = filteredData.filter(
+            (country) => country.region.toLowerCase() === region.toLowerCase(),
+          );
+          if (filteredData == "") {
+            error();
+            setFilter("");
           }
+        }
 
-          setData(filteredData);
-        })
-        .catch((e) => {
-          alert("An error has occurred!", e);
-        });
+        setData(filteredData);
+      })
+      .catch((e) => {
+        alert("An error has occurred!", e);
+      });
   }, [search, region]);
 
   const options = [
@@ -82,20 +82,18 @@ function App() {
     },
   ];
   const handleFilter = (value) => {
-    setFilter(prev =>{
-      prev.set("region", value)
-      return prev
-    })
-
+    setFilter((prev) => {
+      prev.set("region", value);
+      return prev;
+    });
   };
   const handleSearch = (form) => {
-    setFilter(prev =>{
-      prev.set("search", form.search)
-      return prev
-    } )
+    setFilter((prev) => {
+      prev.set("search", form.search);
+      return prev;
+    });
   };
   const navigate = useNavigate();
-
 
   return (
     <div className="body">
@@ -123,7 +121,7 @@ function App() {
             key={country.name}
             className="card"
             onClick={() => {
-             navigate(country.name.toLowerCase())
+              navigate(country.name.toLowerCase());
             }}
           >
             <img

@@ -29,59 +29,59 @@ export default function CountryPage() {
         <Button href="/" className="back-button">
           <BsArrowLeft />{" "}
         </Button>
-        <img src={countryData.flag} alt="flag" className='flag-big'/>
-        <div className='country-info'>
-        <h1>{countryData.name}</h1>
+        <img src={countryData.flag} alt="flag" className="flag-big" />
+        <div className="country-info">
+          <h1>{countryData.name}</h1>
 
-        <span className="info-span">
-          Native Name:
-          <span className="info-other"> {countryData.nativeName}</span>
-        </span>
-        <br />
-        <span className="info-span">
-          Population:
-          <span className="info-other">
-            {" "}
-            {countryData.population.toLocaleString()}
+          <span className="info-span">
+            Native Name:
+            <span className="info-other"> {countryData.nativeName}</span>
           </span>
-        </span>
-        <br />
-        <span className="info-span">
-          Region:<span className="info-other"> {countryData.region}</span>
-        </span>
-        <br />
-        <span className="info-span">
-          Sub Region:
-          <span className="info-other"> {countryData.subregion}</span>
-        </span>
-        <br />
-        <span className="info-span">
-          Capital:<span className="info-other"> {countryData.capital}</span>
-        </span>
-        <br />
-        <span className="info-span">
-          Top Level Domain:
-          <span className="info-other"> {countryData.topLevelDomain}</span>
-        </span>
-        <br />
-        <div>
-          {countryData.currencies.map((currency) => (
-            <span key={currency.code}>
+          <br />
+          <span className="info-span">
+            Population:
+            <span className="info-other">
               {" "}
-              <span className="info-span">Currencies :</span> {currency.name} (
-              {currency.code})
+              {countryData.population.toLocaleString()}
             </span>
-          ))}
-        </div>
-        <div>
-          <span className="info-span">Languages: </span>
-          {countryData.languages.map((langauge) => (
-            <span key={langauge.language}>
-              {","}
-              {langauge.name}{" "}
-            </span>
-          ))}
-        </div>
+          </span>
+          <br />
+          <span className="info-span">
+            Region:<span className="info-other"> {countryData.region}</span>
+          </span>
+          <br />
+          <span className="info-span">
+            Sub Region:
+            <span className="info-other"> {countryData.subregion}</span>
+          </span>
+          <br />
+          <span className="info-span">
+            Capital:<span className="info-other"> {countryData.capital}</span>
+          </span>
+          <br />
+          <span className="info-span">
+            Top Level Domain:
+            <span className="info-other"> {countryData.topLevelDomain}</span>
+          </span>
+          <br />
+          <div>
+            {countryData.currencies.map((currency) => (
+              <span key={currency.code}>
+                {" "}
+                <span className="info-span">Currencies :</span> {currency.name}{" "}
+                ({currency.code})
+              </span>
+            ))}
+          </div>
+          <div>
+            <span className="info-span">Languages: </span>
+            {countryData.languages.map((langauge) => (
+              <span key={langauge.language}>
+                {","}
+                {langauge.name}{" "}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </div>
