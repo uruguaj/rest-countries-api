@@ -31,6 +31,10 @@ const CardsWrapper = styled.div`
   @media (max-width: 600px) {
     grid-template-columns: repeat(1, 1fr);
   }
+
+  @media (min-width: 1500px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
 `;
 
 const BodyWrapper = styled.div`
