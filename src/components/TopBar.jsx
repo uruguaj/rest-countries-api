@@ -37,7 +37,13 @@ export default function TopBar() {
     <>
       <TopBarWrapper>
         <ContentWrapper>
-          <Title>Where in the world?</Title>
+          <Title
+            onClick={() => {
+              location.href = "/";
+            }}
+          >
+            Where in the world?
+          </Title>
           <ToggleButton>
             <Icon name="moon" />
           </ToggleButton>

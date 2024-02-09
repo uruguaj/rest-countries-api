@@ -23,3 +23,7 @@ body {
 .search {
   color: white;
 }
+.ui.button {
+  background-color: var(--background-dark-light);
+  color: #fff;
+}

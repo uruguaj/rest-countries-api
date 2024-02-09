@@ -10,12 +10,17 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 // components imports
 import App from "./App.jsx";
 import TopBar from "./components/TopBar.jsx";
+import SingleCountry from "./SingleCountry/index.jsx";
 
 // router
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/:name",
+    element: <SingleCountry />,
   },
 ]);
 

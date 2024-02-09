@@ -11,6 +11,7 @@ import styled from "styled-components";
 
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 
 // styled components
 const CardsWrapper = styled.div`
@@ -62,16 +63,20 @@ const InputWrapper = styled.div`
     }
   }
 `;
+const SingleCard = styled.div`
+  cursor: pointer;
+`;
 
 function App() {
   //variables for filter
   const [filter, setFilter] = useState(null);
   const [inputText, setInputText] = useState("");
+  const navigate = useNavigate();
 
   // data fetch
   const { isPending, error, data } = useQuery({
     queryKey: ["countries"],
-    queryFn: () => fetch("./data.json").then((res) => res.json()),
+    queryFn: async () => await fetch("./data.json").then((res) => res.json()),
   });
   // fetch pending component, here to avoid importing same component twice
   if (isPending) {
@@ -168,9 +173,15 @@ function App() {
 
         <CardsWrapper>
           {filteredData.map((country) => (
-            <div key={country.name} className="c1">
+            <SingleCard
+              key={country.name}
+              className="c1"
+              onClick={() => {
+                navigate(`/${country.name}`);
+              }}
+            >
               <HomeCard key={country.name} country={country} />
-            </div>
+            </SingleCard>
           ))}
         </CardsWrapper>
       </BodyWrapper>
